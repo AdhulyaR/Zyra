@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mamaearth</title>
+  <link rel="stylesheet" href="./bootstrap.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Courgette&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Libertinus+Keyboard&family=Yellowtail&display=swap" rel="stylesheet"> 
+
+
+  <style>
+    body { margin: 0; font-family: 'Inter', system-ui, Roboto, Arial; background: #f6f7fb; color:#111827; }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+
+    .b2 { background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(113,42,92,1) 0%, rgba(40,25,46,1) 90%); }
+
+    .search-container { position: relative; width: 100%; max-width: 350px; }
+    #search { width: 100%; padding: 10px; border-radius: 8px; border: 3px solid #6e025c; font-family: 'Courgette', cursive; font-size: 15px; }
+    #clearSearch { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; display: none; }
+    #dropdown { position: absolute; top: 48px; left: 0; width: 100%; background: #fff; list-style: none; padding: 0; margin: 0; display: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); max-height: 200px; overflow-y: auto; z-index: 1000; font-family: Allura, cursive; font-size: 25px;  }
+    #dropdown li { padding: 10px; cursor: pointer; }
+    #dropdown li:hover { background: #f1f1f1; }
+
+    .carousel-inner img { width: 100%; height: 400px; object-fit: cover; }
+    @media (max-width: 576px) { .carousel-inner img { height: 250px; } }
+
+    .product-img { width: 100%; height: 250px; object-fit: cover; }
+    .cart-count { position: absolute; top: 1px; right: -1px; background:red;color:white;font-size:12px;font-weight:600;padding:3px 7px;border-radius:50%; line-height:1; display:inline-block; }
+
+    .btn-primary { background-image: linear-gradient(to right, #AA076B 0%, #61045F 51%, #AA076B 100%); margin:10px;padding:10px 30px;text-align:center;text-transform:uppercase;transition:0.5s;background-size:200% auto;color:white;border-radius:10px; display:block; }
+    .btn-primary:hover { background-position:right center;color:#fff;text-decoration:none; }
+    .cart-btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: 1px;   /* Move badge UP */
+    right: -1px; /* Move badge RIGHT */
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 1;
+}
+    .btn-primary{
+        background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
+    box-shadow: 0 6px 14px rgba(11,116,255,0.12);
+     margin: 10px;
+            padding: 10px 30px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 8px #eee;
+            border-radius: 10px;
+            display: block;
+
+  }
+    .btn-primary:hover{
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+  }
+
+
+    .footer { background-image: radial-gradient(circle farthest-corner at 50% 50%, rgba(113,42,92,1) 0%, rgba(40,25,46,1) 90%); font-family: 'Courgette', cursive; font-size:20px; color:#fff; }
+    .footer a { color:#fff; text-decoration:none; }
+    .footer a:hover { color:#ff7eb3 !important; }
+    .footer hr { opacity:0.2; }
+  </style>
+</head>
+<body class=" mt-2 bg-body-tertiary">
+
+<!-- Navbar -->
+<nav class="navbar bg-body-tertiary b2 p-2" style="font-family: Allura, cursive; font-size: 25px;">
+  <a class="navbar-brand" href="./index.html"><img src="./zyra_og-removebg-preview.png" alt="ZYRA" width="100" height="80" /></a>
+  <div class="navbar navbar-expand-sm">
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapse"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="collapse">
+      <ul class="nav justify-content-end">
+        <li class="nav-item"><a class="nav-link text-white" href="./index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="./skincare.html">Skincare</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Search + Cart -->
+<nav class="navbar bg-white" style="font-family: Allura, cursive; font-size: 25px;">
+  <div class="container-fluid">
+    <button class="btn btn-primary" onclick="history.back()">⬅</button>
+    <div class="search-container">
+      <input type="text" style=" font-family: Courgette, cursive; font-size: 15px;" id="search" placeholder="Search Products...">
+          <span id="clearSearch">✖</span>
+      <ul class="dropdown" id="dropdown" style=" font-family: Courgette, cursive; font-size: 15px;"></ul>
+    </div>
+    <div style=" font-family: Allura, cursive; font-size: 25px;" >
+    <button class="btn cart-toggle" id="openCart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" style="font-size:25px;">
+      🛒 <span style="font-weight:600">Cart</span>
+      <span id="cartCount" class="cart-count" hidden>0</span>
+    </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas Cart -->
+<div class="offcanvas offcanvas-end"  style=" font-family: Courgette, cursive; font-size: 15px; width: 500px;" tabindex="-1" id="offcanvasRight">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Cart Items💕</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="cartRow"></div>
+    <hr>
+    <h4>Total: ₹<span id="tot">0</span></h4>
+  </div>
+</div>
+
+<!-- Carousel -->
+<div id="carouselExampleInterval" class="carousel slide container" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="./mamaea.webp" class="d-block w-100" alt="Banner 1" />
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="./mama.banner2.webp" class="d-block w-100" alt="Banner 2" />
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Products -->
+<div class="row container"  style=" font-family: Courgette, cursive; font-size: 15px;" id="productRow"></div>
+
+<!-- Footer -->
+<footer class="footer bg-dark text-light pt-5 pb-4">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">About Us</h5>
+        <p class="small">We provide high-quality beauty & skincare products at the best price.<br>Your trusted cosmetic store.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled small">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./skincare.html">Skincare</a></li>
+          <li><a href="./new brand.html">Brands</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">Contact</h5>
+        <p class="small mb-1">📍 Chennai, Tamil Nadu</p>
+        <p class="small mb-1">📞 +91 98765 43210</p>
+        <p class="small mb-3">📧 zyra@yourstore.com</p>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4 mb-3">
+    <div class="text-center small">© 2025 Your Store. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+const products = [
+  {img:"./mm-1.jpg",name:"Mamaearth Ubtan Facewash & Turmeric Gel",price:649},
+  {img:"./mm-2.jpg",name:"Mamaearth Anti-pollution Face Cream",price:380},
+  {img:"./mm-3.jpg",name:"Mamaearth Vitamin C Hand Cream",price:350},
+  {img:"./mm-15.jpg",name:"Mamaearth Oil-free Face Moisturizer",price:400},
+  {img:"./mm-14.jpg",name:"Mamaearth Acqa Glow Gel Face Moisturizer",price:350},
+  {img:"./mm-6.jpg",name:"Mamaearth Rice Facewash with Niacinamide",price:399},
+  {img:"./mm-10.jpg",name:"Mamaearth Onion Shampoo",price:499},
+  {img:"./mm-8.jpg",name:"Mamaearth Hydrating Body Lotion",price:489},
+  {img:"./mm-9.jpg",name:"Mamaearth Ubtan Body Lotion",price:340},
+  {img:"./mm-13.jpg",name:"Mamaearth Multani Mitti Face Pack(100g)",price:199},
+{img:"./mm-11.jpg",name:"Mamaearth Ubtan Face Mask(100g)",price:200},
+{img:"./mm-12.jpg",name:"Mamaearth Vitamin C Face Mask(100g)",price:210},
+{img:"./mm-16.jpg",name:"Mamaearth Ultra-Light Sunscreen SPF 50 P+++",price:450},
+{img:"./mm-17.jpg",name:"Mamaearth Vitamin C Sunscreen SPF 50 P+++",price:550},
+{img:"./mm-18.jpg",name:"Mamaearth Ubtan Body Wash for glow skin",price:340},
+
+];
+
+
+const productRow = document.getElementById("productRow");
+const search = document.getElementById("search");
+const dropdown = document.getElementById("dropdown");
+const clearBtn = document.getElementById("clearSearch");
+
+
+
+// ================= CART SYSTEM ===================
+var cart = []
+var cartRow = document.getElementById("cartRow")
+var tot = document.getElementById("tot")
+
+function addcart(img,name,price){
+
+    let exist = cart.find(item => item.cartname === name)
+
+    if(exist){
+        exist.cartquantity++
+    } else {
+        cart.push({cartimg:img, cartname:name, cartprice:price, cartquantity:1})
+    }
+
+    result()
+}
+
+function remove1(name){
+    cart = cart.filter(item => item.cartname !== name)
+    result()
+}
+
+// cart-1
+
+function updateCartCount() {
+    let count = 0;
+
+    cart.forEach(item => {
+        count += item.cartquantity;
+    });
+
+    const cartCount = document.getElementById("cartCount");
+
+    if (count > 0) {
+        cartCount.hidden = false;
+        cartCount.innerText = count;
+    } else {
+        cartCount.hidden = true;
+    }
+}
+function result(){
+    cartRow.innerHTML = ""
+    let total = 0
+
+    cart.map((e)=>{
+        total += e.cartprice * e.cartquantity
+
+        cartRow.innerHTML += `
+        <div class="row  p-2 mb-2">
+            <div class="col-4">
+                <img src="${e.cartimg}" style="width:200px ">
+            </div>
+            <div class="col-1"></div>
+            <div class="col-7">
+                <h6>${e.cartname}</h6>
+                <p>₹${e.cartprice} * ${e.cartquantity}</p>
+
+                <button class="btn btn-sm btn-info" onclick="increase('${e.cartname}')">+</button>
+                <button class="btn btn-sm btn-info" onclick="decrease('${e.cartname}')">-</button>
+
+                <button class="btn btn-sm btn-danger float-end" onclick="remove1('${e.cartname}')">Remove</button>
+            </div>
+        </div>
+        `
+    })
+
+    tot.innerText = total
+
+    updateCartCount();   // 👈 NEW LINE — updates number on top
+}
+
+
+function increase(name){
+    cart.map(e=>{
+        if(e.cartname === name) e.cartquantity++
+    })
+    result()
+}
+
+function decrease(name){
+    cart.map(e=>{
+        if(e.cartname === name && e.cartquantity > 1) e.cartquantity--
+    })
+    result()
+}
+
+
+
+
+/* ------------------------------------------
+   RENDER PRODUCTS (ONE SINGLE CLEAN FUNCTION)
+------------------------------------------ */
+function renderProducts(list = products){
+  productRow.innerHTML = "";
+  list.forEach(p =>{
+    const col = document.createElement("div");
+    col.className = "col-12 col-md-4 mb-3 product-card";
+    col.innerHTML = `
+      <div class="text-center border p-2">
+        <img src="${p.img}" style="width:100%">
+        <p>${p.name}</p>
+        <h6>₹${p.price}</h6>
+        <a class="btn btn-sm btn-primary add-btn" style="width:100px" 
+          data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        onclick="addcart('${p.img}','${p.name}',${p.price})">Add</a>
+      </div>`;
+
+    productRow.appendChild(col);
+
+    // ⭐ ADD TO CART BUTTON EVENT LISTENER (PASTE HERE)
+    const btn = col.querySelector(".add-btn");
+    btn.addEventListener("click", () => {
+      addcart(p.img, p.name, p.price);
+    });
+  });
+
+  if(list.length){
+    productRow.scrollIntoView({ behavior:"smooth" });
+  }
+}
+
+/* ------------------------------------------
+   DROPDOWN + LIVE SEARCH
+------------------------------------------ */
+search.addEventListener("input", ()=>{
+  const val = search.value.toLowerCase();
+
+  clearBtn.style.display = val ? "block" : "none";
+
+  const filtered = products.filter(p => 
+    p.name.toLowerCase().includes(val)
+  );
+
+  dropdown.innerHTML = "";
+  
+  if(val && filtered.length){
+    dropdown.style.display = "block";
+
+    filtered.forEach(p=>{
+      const li = document.createElement("li");
+      li.textContent = p.name;
+      li.onclick = () => {
+        search.value = p.name;
+        dropdown.style.display = "none";
+        renderProducts([p]);
+      };
+      dropdown.appendChild(li);
+    });
+  } else {
+    dropdown.style.display = "none";
+  }
+});
+
+/* ------------------------------------------
+   PRESS ENTER → SHOW RESULT PRODUCT
+------------------------------------------ */
+search.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter"){
+    const val = search.value.toLowerCase();
+    const filtered = products.filter(p =>
+      p.name.toLowerCase().includes(val)
+    );
+
+    dropdown.style.display = "none";
+    renderProducts(filtered);
+  }
+});
+
+/* ------------------------------------------
+   CLEAR BUTTON
+------------------------------------------ */
+clearBtn.onclick = () => {
+  search.value = "";
+  clearBtn.style.display = "none";
+  dropdown.style.display = "none";
+  renderProducts(products); // show all again
+};
+
+/* ------------------------------------------
+   CLICK OUTSIDE → CLOSE DROPDOWN
+------------------------------------------ */
+document.addEventListener("click", (e)=>{
+  if(!e.target.closest(".search-container")){
+    dropdown.style.display = "none";
+  }
+});
+
+/* INITIAL LOAD */
+renderProducts();
+</script>
+<script src="./bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+</html>

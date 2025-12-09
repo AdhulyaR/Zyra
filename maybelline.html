@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maybelline</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Yellowtail&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Libertinus+Keyboard&family=Yellowtail&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Caveat:wght@400..700&family=Courgette&family=Great+Vibes&family=Libertinus+Keyboard&family=Yellowtail&display=swap" rel="stylesheet">
+
+</head>
+
+   
+  <body class= "mt-2 bg-body-tertiary">
+    <div class="">
+      <nav  class=" navbar bg-body-tertiary b2 p-2"  style=" font-family: Allura, cursive; font-size: 25px; ">
+        <a class="navbar-brand " href="./index.html">
+          <img 
+            src="./zyra_og-removebg-preview.png"
+            alt="ZYRA"
+            width="100px"
+            height="80"
+          />
+        </a>
+        <div class="navbar navbar-expand-sm">
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapse"><span class="navbar-toggler-icon"></span> </button>
+       <div class="collapse navbar-collapse" id="collapse">
+        <ul class="nav justify-content-end ">
+         <li class="nav-item"><a class="nav-link text-white" href="./index.html">Home </a></li>
++        </ul>
+        </div>
+     </div>
+
+      </nav>
+    </div>
+
+    <nav class="navbar bg-white "  style=" font-family: Allura, cursive; font-size: 25px; ">
+      <div class="container-fluid">
+         <div class="div">
+          <!-- history -->
+<button class="btn btn-primary"  onclick="history.back()">⬅</button></div>
+    <div class="search-container">
+    <input type="text"  style=" font-family: Courgette, cursive; font-size: 15px; border-radius: 8px; border-color: #6e025c; width: 100%; border-style: solid !important ; border-image: none !important; border-width: 3px; padding: 5px;" id="search" placeholder="Whats New...?" onfocus="showDropdown()" onkeyup="filterList()">
+    <ul class="dropdown"  style=" font-family: Courgette, cursive; font-size: 15px;" id="dropdown">
+    </ul>
+        </div>
+<div class="cart-btn-wrapper">
+    <button class="btn cart-toggle" id="openCart" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvasRight"
+        style="font-size: 25px; padding-right: 25px;">
+        🛒 <span style="font-weight:600;font-family:Allura;font-size:25px;">Cart</span>
+    </button>
+
+    <span id="cartCount" class="cart-count" hidden>0</span>
+</div>
+
+
+    <div class="offcanvas offcanvas-end" style=" font-family: Courgette, cursive; font-size: 15px; " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart Items💕</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="row">
+
+            </div>
+
+            <h4>total : <span id="tot">0</span></h4>
+
+
+        </div>
+    </div>
+
+      </div>
+    </nav>
+    <br>
+    <div
+      id="carouselExampleInterval"
+      class="carousel slide container"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="./may.webp" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row"  id="row"></div>
+    <div class="row container"  id="row1"></div>
+
+</div>
+<!-- 1 -->
+ <div class="container" style=" font-family: Courgette, cursive; font-size: 15px;">
+     <div class="row container-fluid " id="row2">
+        <div class="col-md-3 card " >
+            <img src="./may1.jpg" alt="">
+            <p> Maybelline SuperStay Teddy Tint </p>
+             <h5>₹449</h5>
+            <button class="btn btn-primary "style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may1.jpg',' Maybelline SuperStay Teddy Tint',449 )">Add</button>
+        </div>
+        <!-- 2 -->
+        <div class="col-md-3 card   ">
+            <img src="./may2.jpg" alt="">
+            <p>Maybelline Countdown Palette</p>
+            <h5>₹468</h5>
+            <button class="btn btn-primary " style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may2.jpg','Maybelline Countdown Palette',468 )">Add</button>
+        </div>
+        <!-- 3 -->
+        <div class="col-md-3 card  ">
+            <img src="./may3.jpg" alt="">
+            <p>Maybelline Colossal Bold Eyeliner</p>
+            <h5>₹399</h5>
+            <button class="btn btn-primary"style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may3.jpg',' Maybelline Colossal Bold Eyeliner',399)">Add</button>
+        </div>
+               </div>
+               <br>
+
+<!-- 4 -->
+ <div class="row container-fluid" id="row3">
+        <div class="col-md-3 card ">
+            <img src="./may4.jpg" alt="">
+            <p>Maybelline Colossal Bold Kajal</p>
+            <h5>₹350</h5>
+            <button class="btn btn-primary" style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may4.jpg','Maybelline Colossal Bold Kajal',350)">Add</button>
+        </div>
+        <!-- 5 -->
+        <div class="col-md-3 card">
+            <img src="./may5.jpg" alt="">
+            <p>Maybelline Newyork Baby Lips Colour</p>
+            <h5>₹150</h5>
+            <button class="btn btn-primary " style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may5.jpg','Maybelline Newyork Baby Lips Colour ',150)">Add</button>
+        </div>
+        <!-- 6 -->
+        <div class="col-md-3 card ">
+            <img src="./may6.jpg" alt="" >
+            <p>Maybelline Fit Me Matte poreless 128</p>
+            <h5>₹398</h5>
+            <button class="btn btn-primary" style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may6','Maybelline Fit Me Matte poreless 128',398)">Add</button>
+        </div>
+    </div>
+<br>
+<!-- 7 -->
+  <div class="row container-fluid" id="row4">
+
+        <div class="col-md-3 card ">
+            <img src="./may7.jpg" alt="">
+            <p> Maybelline Fit Me shine-free sticky</p>
+            <h5>₹350</h5>
+            <button class="btn btn-primary " style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may7.jpg','  Maybelline Fit Me shine-free sticky',350)">Add</button>
+        </div>
+        <!-- 8 -->
+        <div class="col-md-3 card ">
+            <img src="./may8.jpg" alt="" >
+            <p>Maybelline Multi-purpose Concealer</p>
+            <h5>₹400</h5>
+            <button class="btn btn-primary " style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may8.jpg','Maybelline Multi-purpose Concealer',400)">Add</button>
+        </div>
+        <!-- 9 -->
+        <div class="col-md-3 card ">
+            <img src="./may9.jpg" alt="" >
+            <p>Concealer + color corrector Palette  </p>
+            <h5>₹280</h5>
+            <button class="btn btn-primary" style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may9.jpg','Concealer + color corrector Palette ',280)">Add</button>
+        </div>
+  </div>
+  <br>
+<!-- 10 -->
+  <div class="row container-fluid" id="row5">
+
+        <div class="col-md-3 card ">
+            <img src="./may18.jpg" alt="">
+            <p> Maybelline Master Primer and sunscreen SPF 30</p>
+            <h5>₹250</h5>
+            <button class="btn btn-primary " style="width: 100px;"
+             type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may18.jpg','Maybelline Master Primer and sunscreen SPF 30',  250)">Add</button>
+        </div>
+        <!-- 11 -->
+        <div class="col-md-3 card ">
+            <img src="./may12.jpg" alt="" >
+            <p>Maybelline Fit Me Setting Spray Matte poreless</p>
+            <h5>₹450</h5>
+            <button class="btn btn-primary" style="width: 100px;"
+             type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may12.jpg','Maybelline Fit Me Setting Spray Matte poreless',450)">Add</button>
+        </div>
+        <!-- 12 -->
+        <div class="col-md-3 card  ">
+            <img src="./may16.jpg" alt="">
+            <p>  Maybelline Newyork Master Primer and base</p>
+            <h5>₹300</h5>
+            <button class="btn btn-primary" style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./may16.jpg','  Maybelline Newyork Master Primer and base',300)">Add</button>
+        </div>
+  </div>
+  </div>
+  <span id="cartCount" class="cart-count" hidden>0</span>
+  <br>
+  <!-- Footer -->
+<footer class="footer bg-dark text-light pt-5 pb-4" id="footer" style=" font-family: Courgette, cursive; font-size: 20px;">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- About -->
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">About Us</h5>
+        <p class="small">
+          We provide high-quality beauty & <br> skincare products at the best price. <br>
+          Your trusted cosmetic store.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-12 col-md-4 ">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled small">
+          <li><a href="./index.html" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="./skincare.html" class="text-light text-decoration-none">Skincare</a></li>
+          <li><a href="./new brand.html" class="text-light text-decoration-none">Brands</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">Contact</h5>
+        <p class="small mb-1">📍 Chennai, Tamil Nadu</p>
+        <p class="small mb-1">📞 +91 98765 43210</p>
+        <p class="small mb-3">📧 zyra@yourstore.com</p>
+
+        <div class="d-flex gap-3 fs-4">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="text-center small"> 
+      © 2025 Your Store. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+    <style>
+        /* Default (desktop) – image fills width normally */
+.ho1 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Mobile View – prevent stretching */
+@media (max-width: 576px) {
+  .ho1 {
+    height: 300px;     /* Set a safe mobile height */
+    object-fit: cover; /* Prevent stretching (crops instead of stretch) */
+    width: 100%;
+  }
+}
+
+  .footer a:hover {
+  color: #ff7eb3 !important;
+}
+.footer hr {
+  opacity: 0.2;
+}
+.footer{
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+}
+
+/* dropdown */
+  .search-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#dropdown {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#dropdown li:hover {
+    background: #f1f1f1;
+}
+
+     .b2 {
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+  }
+
+      /* .b1 {
+        background-image: radial-gradient(
+          circle farthest-corner at 10% 20%,
+          rgba(0, 51, 102, 1) 0%,
+          rgba(0, 102, 204, 1) 49.5%,
+          rgba(0, 191, 255, 1) 90%
+        );
+      } */
+
+        #num {
+            width: 40px !important;
+            text-align: center;
+        }
+
+      #row2{
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      #row3{
+        flex-wrap: wrap;
+        justify-content:space-around !important;
+      }
+      #row4{
+        flex-wrap: wrap;
+        justify-content:space-around !important;
+      }
+      #row5{
+        flex-wrap: wrap;
+        justify-content:space-around !important;
+      }
+
+:root{
+    --page-bg: #f6f7fb;
+    --max-width: 1200px;
+    --card-radius: 12px;
+    --card-bg: #fff;
+
+  }
+   .card{
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+    min-height: 220px;
+  }
+
+
+  /* Page layout */
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--page-bg);
+    color:#111827;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .container{
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .btn-primary{
+        background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
+    box-shadow: 0 6px 14px rgba(11,116,255,0.12);
+     margin: 10px;
+            padding: 10px 30px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 8px #eee;
+            border-radius: 10px;
+            display: block;
+
+  }
+    .btn-primary:hover{
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+  }
+  /* Cart badge circle */
+.cart-btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: 1px;   /* Move badge UP */
+    right: -1px; /* Move badge RIGHT */
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 1;
+}
+
+  
+
+
+
+
+    </style>
+
+    <script>
+// cart-1
+  function updateCartCount() {
+    let count = cart.reduce((sum, item) => sum + item.cartquantity, 0);
+    const cartCount = document.getElementById("cartCount");
+
+    if (count > 0) {
+        cartCount.innerText = count;
+        cartCount.hidden = false;
+    } else {
+        cartCount.hidden = true;
+    }
+}
+
+
+  var row = document.getElementById("row")
+  var tot = document.getElementById("tot")
+  var cart = []
+  var total = 0
+
+  // Add Product
+  function product(img, name, price) {
+      var exists = cart.find(item => item.cartname === name);
+
+      if (exists) {
+          exists.cartquantity += 1;
+      } else {
+          cart.push({ cartimg: img, cartname: name, cartprice: price, cartquantity: 1 })
+      }
+
+      result();
+  }
+
+  // Remove full item
+  function remove1(name1) {
+      cart = cart.filter(item => item.cartname !== name1)
+      result()
+  }
+
+  // Increase quantity
+  function inc(name) {
+      cart.forEach(item => {
+          if (item.cartname === name) {
+              item.cartquantity += 1;
+          }
+      })
+      result()
+  }
+
+  // Decrease quantity
+  function decrease(name) {
+      cart.forEach(item => {
+          if (item.cartname === name && item.cartquantity >= 1) {
+              item.cartquantity -= 1;
+          }
+      })
+      result()
+  }
+
+  // Print cart-1
+function result() {
+    total = 0
+    row.innerHTML = ""
+
+    if (cart.length === 0) {
+        tot.innerText = 0;
+    }
+
+    cart.forEach((e) => {
+        total += e.cartprice * e.cartquantity;
+        tot.innerText = total;
+
+        row.innerHTML += `
+            <div class="row border p-1">
+                <div class="col-3"><img src="${e.cartimg}" width="100%"></div>
+                <div class="col-2 text-center w-50">${e.cartname}</div>
+                <div class="col-4">
+                    <button onclick="inc('${e.cartname}')">+</button>
+                    <input type="text" id="num" value=${e.cartquantity}>
+                    <button onclick="decrease('${e.cartname}')">-</button>
+                </div>
+                <div class="col-2 text-center">&#8377;${e.cartprice}</div>
+                <div class="col-1"><button class="btn btn-danger" onclick="remove1('${e.cartname}')">Remove</button></div>
+            </div>`
+    });
+
+    updateCartCount();  // <-- ADD THIS LINE
+}
+
+        // Dropdown
+    let brands = [
+    " Maybelline SuperStay Teddy Tint",
+    "Maybelline Newyork Countdown Palette",
+    "Maybelline Colossal Bold Eyeliner",
+    "Maybelline Colossal Bold Kajal",
+    "Maybelline Newyork Baby Lips Colour",
+    "Maybelline Fit Me Matte poreless 128",
+    " Maybelline Fit Me shine-free sticky",
+    "Maybelline Multi-purpose Concealer",
+    " Concealer + color corrector Palette ",
+    "Maybelline Master Primer and sunscreen SPF 30",
+    "Maybelline Fit Me Setting Spray Matte poreless",
+];
+
+const search = document.getElementById("search");
+const dropdown = document.getElementById("dropdown");
+
+search.addEventListener("input", () => {
+    let value = search.value.toLowerCase();
+
+    // FILTER + SORT
+    let filtered = brands
+        .filter(b => b.toLowerCase().includes(value))
+        .sort(); // alphabetical sort
+
+    dropdown.innerHTML = "";
+
+    if (filtered.length > 0 && value !== "") {
+        dropdown.style.display = "block";
+
+        filtered.forEach(brand => {
+            let li = document.createElement("li");
+            li.textContent = brand;
+            dropdown.appendChild(li);
+
+            li.onclick = () => {
+                search.value = brand;
+                dropdown.style.display = "none";
+            };
+        });
+
+    } else {
+        dropdown.style.display = "none";
+    }
+});
+
+// CLOSE DROPDOWN IF CLICK OUTSIDE
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-container")) {
+        dropdown.style.display = "none";
+    }
+});
+
+
+
+    </script>
+
+    <script src="./bootstrap.bundle.min.js"></script>
+  </body>
+</html>

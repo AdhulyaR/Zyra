@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cetaphil</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Yellowtail&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Libertinus+Keyboard&family=Yellowtail&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Caveat:wght@400..700&family=Courgette&family=Great+Vibes&family=Libertinus+Keyboard&family=Yellowtail&display=swap" rel="stylesheet">
+
+</head>
+
+   
+  <body class=" mt-2 bg-body-tertiary">
+    <div class="">
+      <nav  class=" navbar bg-body-tertiary b2 p-2"  style=" font-family: Allura, cursive; font-size: 25px; ">
+        <a class="navbar-brand " href="./index.html">
+          <img 
+            src="./zyra_og-removebg-preview.png"
+            alt="ZYRA"
+            width="100px"
+            height="80"
+          />
+        </a>
+        <div class="navbar navbar-expand-sm">
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapse"><span class="navbar-toggler-icon"></span> </button>
+       <div class="collapse navbar-collapse" id="collapse">
+        <ul class="nav justify-content-end ">
+         <li class="nav-item"><a class="nav-link text-white" href="./index.html">Home </a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./skincare.html">Skincare</a></li>
+        </ul>
+        </div>
+     </div>
+      </nav>
+    </div>
+    <nav class="navbar bg-white "  style=" font-family: Allura, cursive; font-size: 25px; ">
+      <div class="container-fluid">
+         <div class="div">
+          <!-- history -->
+<button class="btn btn-primary" onclick="history.back()">⬅</button></div>
+    <div class="search-container">
+    <input type="text"  style=" font-family: Courgette, cursive; font-size: 15px; border-radius: 8px; border-color: #6e025c; width: 100%; border-style: solid !important ; border-image: none !important; border-width: 3px; padding: 5px;" id="search" placeholder="Whats New...?" onfocus="showDropdown()" onkeyup="filterList()">
+    <ul class="dropdown"  style=" font-family: Courgette, cursive; font-size: 15px;" id="dropdown">
+    </ul>
+        <span 
+        id="clearSearch"
+        style="
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+            color: #777;
+            display: none;
+        ">
+        ✖
+    </span>
+        </div>
+<div class="cart-btn-wrapper">
+    <button class="btn cart-toggle" id="openCart" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvasRight"
+        style="font-size: 25px; padding-right: 25px;">
+        🛒 <span style="font-weight:600;font-family:Allura;font-size:25px;">Cart</span>
+    </button>
+
+    <span id="cartCount" class="cart-count" hidden>0</span>
+</div>
+
+
+    <div class="offcanvas offcanvas-end" style=" font-family: Courgette, cursive; font-size: 15px; width: 500px; " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart Items💕</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="row">
+
+            </div>
+
+            <h4>Total : <span id="tot">0</span></h4>
+
+        </div>
+    </div>
+
+
+      </div>
+    </nav>
+    <br>
+    <div
+      id="carouselExampleInterval"
+      class="carousel slide container"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="./c-banner.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="./c-banner.jpg" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <br />
+    <div class="row"  id="row"></div>
+  
+    <div class="row container"  id="row1"></div>
+
+</div>
+<!-- 1 -->
+ <div class="container" style=" font-family: Courgette, cursive; font-size: 15px;">
+     <div class="row container-fluid " id="row2">
+        <div class="col-md-3 card " >
+            <img src="./c1-derma.jpg" alt="">
+            <p> Derma control-oil absorbing moisturizer with sunscreen SPF 30</p>
+             <h5>₹449</h5>
+            <button class="btn btn-primary "style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-derma.jpg','Derma sunscreen SPF 30(118ml)',449 )">Add</button>
+        </div>
+        <!-- 2 -->
+        <div class="col-md-3 card   ">
+            <img src="./c1-lotion.jpg" alt="">
+            <p> Cetaphil Daily Hydrating lotion oil-free for all skin types(88ml)</p>
+            <h5>₹268</h5>
+            <button class="btn btn-primary " style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-lotion.jpg','  Daily Hydrating lotion (88ml)',268 )">Add</button>
+        </div>
+        <!-- 3 -->
+        <div class="col-md-3 card  ">
+            <img src="./c1-cream.jpg" alt="">
+            <p> Cetaphil Moisturising Cream for Dry to Normal Sensitive skin(250g)</p>
+            <h5>₹249</h5>
+            <button class="btn btn-primary"style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-cream.jpg',' Moisturising Sensitive skin(250g)',249)">Add</button>
+        </div>
+               </div>
+               <br>
+
+<!-- 4 -->
+ <div class="row container-fluid" id="row3">
+        <div class="col-md-3 card ">
+            <img src="./c1-gentle.jpg" alt="">
+            <p> Gentel Exfoliating SA Lotion for all skin(237ml)</p>
+            <h5>₹330</h5>
+            <button class="btn btn-primary" style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-gentle.jpg','Gentel Exfoliating SA Lotion(237ml)',330)">Add</button>
+        </div>
+        <!-- 5 -->
+        <div class="col-md-3 card">
+            <img src="./c1-facial.jpg" alt="">
+            <p>Daily facial moisturizer oil-free (night use)</p>
+            <h5>₹260</h5>
+            <button class="btn btn-primary " style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-facial.jpg','Daily facial moisturizer ',260)">Add</button>
+        </div>
+        <!-- 6 -->
+        <div class="col-md-3 card ">
+            <img src="./c1-eye.jpg" alt="" >
+            <p>Cetaphil Refreshing Eye Serum hydration</p>
+            <h5>₹398</h5>
+            <button class="btn btn-primary" style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-eye.jpg','Cetaphil Eye Serum ',398)">Add</button>
+        </div>
+    </div>
+<br>
+<!-- 7 -->
+  <div class="row container-fluid" id="row4">
+
+        <div class="col-md-3 card ">
+            <img src="./c1.jpg" alt="">
+            <p> Deep hydration 48H activation serum</p>
+            <h5>₹450</h5>
+            <button class="btn btn-primary " style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1.jpg',' Deep hydration 48H serum',450)">Add</button>
+        </div>
+        <!-- 8 -->
+        <div class="col-md-3 card ">
+            <img src="./c1-f2.jpg" alt="" >
+            <p>Derma control Oil control foam wash</p>
+            <h5>₹400</h5>
+            <button class="btn btn-primary " style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-f2.jpg','Derma Oil control foam wash',400)">Add</button>
+        </div>
+        <!-- 9 -->
+        <div class="col-md-3 card ">
+            <img src="./c1-nt.jpg" alt="" >
+            <p> Cetaphile Rich hydrating night cream</p>
+            <h5>₹300</h5>
+            <button class="btn btn-primary" style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-nt.jpg',' Rich hydrating night cream',300)">Add</button>
+        </div>
+  </div>
+  <br>
+<!-- 10 -->
+  <div class="row container-fluid" id="row5">
+
+        <div class="col-md-3 card ">
+            <img src="./c1-renew.jpg" alt="">
+            <p>  Cetaphil Healthy Renew night cream</p>
+            <h5>₹250</h5>
+            <button class="btn btn-primary " style="width: 100px;"
+             type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-renew.jpg','Healthy Renew night cream',  250)">Add</button>
+        </div>
+        <!-- 11 -->
+        <div class="col-md-3 card ">
+            <img src="./c1-deep.jpg" alt="" >
+            <p> Deep hydration skin Restoring Water Gel</p>
+            <h5>₹450</h5>
+            <button class="btn btn-primary" style="width: 100px;"
+             type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-deep.jpg',' Deep hydration skin Restoring WaterGel ',450)">Add</button>
+        </div>
+        <!-- 12 -->
+        <div class="col-md-3 card  ">
+            <img src="./c1-lt-removebg-preview.png" alt="">
+            <p> Healthy Radiance Renewing cream</p>
+            <h5>₹350</h5>
+            <button class="btn btn-primary" style="width: 100px;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                onclick="product('./c1-lt-removebg-preview.png',' Healthy Radiance Renewing cream',350)">Add</button>
+        </div>
+  </div>
+  </div>
+  <span id="cartCount" class="cart-count" hidden>0</span>
+  <br>
+<!-- Footer -->
+<footer class="footer bg-dark text-light pt-5 pb-4" id="footer" style=" font-family: Courgette, cursive; font-size: 20px;">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- About -->
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">About Us</h5>
+        <p class="small">
+          We provide high-quality beauty & <br> skincare products at the best price. <br>
+          Your trusted cosmetic store.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-12 col-md-4 ">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled small">
+          <li><a href="./index.html" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="./skincare.html" class="text-light text-decoration-none">Skincare</a></li>
+          <li><a href="./new brand.html" class="text-light text-decoration-none">Brands</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">Contact</h5>
+        <p class="small mb-1">📍 Chennai, Tamil Nadu</p>
+        <p class="small mb-1">📞 +91 98765 43210</p>
+        <p class="small mb-3">📧 zyra@yourstore.com</p>
+
+        <div class="d-flex gap-3 fs-4">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="text-center small"> 
+      © 2025 Your Store. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+
+
+
+    <style>
+        /* Default (desktop) – image fills width normally */
+.ho1 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Mobile View – prevent stretching */
+@media (max-width: 576px) {
+  .ho1 {
+    height: 300px;     /* Set a safe mobile height */
+    object-fit: cover; /* Prevent stretching (crops instead of stretch) */
+    width: 100%;
+  }
+}
+
+  .footer a:hover {
+  color: #ff7eb3 !important;
+}
+.footer hr {
+  opacity: 0.2;
+}
+.footer{
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+}
+
+/* dropdown */
+  .search-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#dropdown {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#dropdown li:hover {
+    background: #f1f1f1;
+}
+
+     .b2 {
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+  }
+
+        #num {
+            width: 40px !important;
+            text-align: center;
+        }
+
+      #row2{
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      #row3{
+        flex-wrap: wrap;
+        justify-content:space-around !important;
+      }
+      #row4{
+        flex-wrap: wrap;
+        justify-content:space-around !important;
+      }
+      #row5{
+        flex-wrap: wrap;
+        justify-content:space-around !important;
+      }
+      .card img {
+    width: 100%;
+    height: 180px;      /* adjust height as you like */
+    object-fit: contain; /* keeps full product visible */
+    border-radius: 10px;
+}
+.card {
+    height: auto;
+    padding: 10px;
+}
+
+:root{
+    --page-bg: #f6f7fb;
+    --max-width: 1200px;
+    --card-radius: 12px;
+    --card-bg: #fff;
+
+  }
+   .card{
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+    min-height: 220px;
+  }
+
+
+  /* Page layout */
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--page-bg);
+    color:#111827;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .container{
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .btn-primary{
+        background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
+    box-shadow: 0 6px 14px rgba(11,116,255,0.12);
+     margin: 10px;
+            padding: 10px 30px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 8px #eee;
+            border-radius: 10px;
+            display: block;
+
+  }
+    .btn-primary:hover{
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+  }
+  /* Cart badge circle */
+.cart-btn-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: 1px;   /* Move badge UP */
+    right: -1px; /* Move badge RIGHT */
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 7px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 1;
+}
+
+ .results-box {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.item {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.item:hover {
+    background: #f2f2f2;
+}
+ 
+    </style>
+
+    <script>
+// cart-1
+  function updateCartCount() {
+    let count = cart.reduce((sum, item) => sum + item.cartquantity, 0);
+    const cartCount = document.getElementById("cartCount");
+
+    if (count > 0) {
+        cartCount.innerText = count;
+        cartCount.hidden = false;
+    } else {
+        cartCount.hidden = true;
+    }
+}
+
+
+  var row = document.getElementById("row")
+  var tot = document.getElementById("tot")
+  var cart = []
+  var total = 0
+
+  // Add Product
+  function product(img, name, price) {
+      var exists = cart.find(item => item.cartname === name);
+
+      if (exists) {
+          exists.cartquantity += 1;
+      } else {
+          cart.push({ cartimg: img, cartname: name, cartprice: price, cartquantity: 1 })
+      }
+
+      result();
+  }
+
+  // Remove full item
+  function remove1(name1) {
+      cart = cart.filter(item => item.cartname !== name1)
+      result()
+  }
+
+  // Increase quantity
+  function inc(name) {
+      cart.forEach(item => {
+          if (item.cartname === name) {
+              item.cartquantity += 1;
+          }
+      })
+      result()
+  }
+
+  // Decrease quantity
+  function decrease(name) {
+      cart.forEach(item => {
+          if (item.cartname === name && item.cartquantity >= 1) {
+              item.cartquantity -= 1;
+          }
+      })
+      result()
+  }
+
+  // Print cart-1
+function result() {
+    total = 0
+    row.innerHTML = ""
+
+    if (cart.length === 0) {
+        tot.innerText = 0;
+    }
+
+    cart.forEach((e) => {
+        total += e.cartprice * e.cartquantity;
+        tot.innerText = total;
+
+        row.innerHTML += `
+            <div class="row p-1">
+                <div class="col-3"><img src="${e.cartimg}" width="150px"></div>
+                <div class="col-2 text-center w-50">${e.cartname}</div>
+                <div class="col-4">
+                    <button onclick="inc('${e.cartname}')">+</button>
+                    <input type="text" id="num" value=${e.cartquantity}>
+                    <button onclick="decrease('${e.cartname}')">-</button>
+                </div>
+                <div class="col-2 text-center">&#8377;${e.cartprice}</div>
+                <div class="col-1"><button class="btn btn-danger" onclick="remove1('${e.cartname}')">Remove</button>
+                </div>
+            </div>`
+    });
+
+    updateCartCount();  // <-- ADD THIS LINE
+}
+
+        // Dropdown
+    let brands = [
+    "Derma sunscreen SPF 30",
+    " Daily Hydrating lotion  ",
+    "Cetaphil Moisturising Cream",
+    " Gentel Exfoliating SA Lotion ",
+    "Daily facial moisturizer oil-free",
+    "Cetaphil Refreshing Eye Serum hydration",
+    " Deep hydration 48H activation serum",
+    "Derma control Oil control foam wash",
+    " Cetaphile Rich hydrating night cream",
+    " Cetaphil Healthy Renew night cream",
+    "Deep hydration skin Restoring Water Gel",
+    " Healthy Radiance Renewing cream"
+];
+
+const search = document.getElementById("search");
+const dropdown = document.getElementById("dropdown");
+
+search.addEventListener("input", () => {
+    let value = search.value.toLowerCase();
+
+    // FILTER + SORT
+    let filtered = brands
+        .filter(b => b.toLowerCase().includes(value))
+        .sort(); // alphabetical sort
+
+    dropdown.innerHTML = "";
+
+    if (filtered.length > 0 && value !== "") {
+        dropdown.style.display = "block";
+
+        filtered.forEach(brand => {
+            let li = document.createElement("li");
+            li.textContent = brand;
+            dropdown.appendChild(li);
+
+            li.onclick = () => {
+                search.value = brand;
+                dropdown.style.display = "none";
+                searchProducts();
+                scrollToProduct();
+
+            };
+        });
+
+    } else {
+        dropdown.style.display = "none";
+    }
+});
+// SEARCH FILTER FUNCTION
+function searchProducts() {
+    let value = search.value.toLowerCase().trim();
+
+    document.querySelectorAll(".card").forEach(card => {
+        let name = card.querySelector("p").innerText.toLowerCase();
+
+        if (name.includes(value) && value !== "") {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+// SCROLL FUNCTION
+function scrollToProduct() {
+    let firstCard = document.querySelector(".card:not([style*='display: none'])");
+    if (firstCard) {
+        firstCard.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+}
+
+// ENTER KEY SEARCH + SCROLL
+search.addEventListener("keyup", function (e) {
+    if (e.key === "Enter") {
+        searchProducts();
+        dropdown.style.display = "none";
+        scrollToProduct();
+    }
+});
+
+
+// CLOSE DROPDOWN IF CLICK OUTSIDE
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-container")) {
+        dropdown.style.display = "none";
+    }
+});
+const clearBtn = document.getElementById("clearSearch");
+const searchInput = document.getElementById("search");
+
+// Show X only when typing
+searchInput.addEventListener("input", () => {
+    clearBtn.style.display = searchInput.value.trim() ? "block" : "none";
+});
+
+// Clicking X → Clear Search
+clearBtn.onclick = () => {
+    searchInput.value = "";
+    clearBtn.style.display = "none";
+
+    // Show all products again
+    document.querySelectorAll(".card").forEach(card => {
+        card.style.display = "block";
+    });
+
+    // Hide dropdown list
+    dropdown.style.display = "none";
+
+    // Scroll back to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+
+    </script>
+
+    <script src="./bootstrap.bundle.min.js"></script>
+  </body>
+</html>

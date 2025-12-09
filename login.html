@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="./index.html"> -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome Back!</h1>
+      <form id="loginForm">
+        <div class="input-group">
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <button type="submit">Login</button>
+        <p class="message">
+          Don't have an account? <a href="./signup.html">Sign Up</a>
+         <a style="text-decoration: none;" href="./index.html">Home</a>
+        </p>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgb(59, 37, 68) 90% );
+  }
+
+  .container {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+
+  .container h1 {
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  .input-group {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+
+  .input-group input:focus {
+    border-color: #8b5cf6;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #8b5cf6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background-color: #7c3aed;
+  }
+
+  .message {
+    margin-top: 15px;
+    color: #666;
+  }
+
+  .message a {
+    color: #8b5cf6;
+    text-decoration: none;
+  }
+
+  .message a:hover {
+    text-decoration: underline;
+  }
+</style>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form from refreshing page
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (email === "" || password === "") {
+      alert("Please fill out all fields!");
+    } else if (!validateEmail(email)) {
+      alert("Please enter a valid email address!");
+    } else if (password.length < 6) {
+      alert("Password must be at least 6 characters!");
+    } else {
+      alert("Login successful!");
+      // You can redirect the user after login here
+      // window.location.href = "dashboard.html";
+    }
+  });
+
+  function validateEmail(email) {
+    const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    return pattern.test(email);
+  }
+</script>

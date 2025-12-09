@@ -1,0 +1,7 @@
+var a=[{img:"./kajai.jpg",name:"Kajal",price:199}]
+[{img:"./kajai.jpg",name:"Kajal",price:199}]
+[{img:"./kajai.jpg",name:"Kajal",price:199}]
+[{img:"./kajai.jpg",name:"Kajal",price:199}]
+[{img:"./kajai.jpg",name:"Kajal",price:199}]
+[{img:"./kajai.jpg",name:"Kajal",price:199}]
+[{img:"./kajai.jpg",name:"Kajal",price:199}]

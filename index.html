@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZyRa</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./zyra icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Yellowtail&display=swap" rel="stylesheet"> 
+<!-- <link rel="stylesheet" href="./javascript.js"> -->
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Libertinus+Keyboard&family=Yellowtail&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  </head>
+
+
+  <body class=" mt-2 bg-body-tertiary">
+    <div class="">
+      <nav  class=" navbar bg-body-tertiar b1 p-2"  style=" font-family: Allura, cursive; font-size: 25px; ">
+        <a class="navbar-brand " href="./index.html">
+          <img 
+            src="./zyra_og-removebg-preview.png"
+            alt="ZYRA"
+            width="100px"
+            height="80"
+          />
+        </a>
+        <div class="navbar navbar-expand-sm">
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapse"><span class="navbar-toggler-icon"></span> </button>
+<div class="collapse navbar-collapse justify-content-end" id="collapse">
+  <ul class="navbar-nav">
+    <!-- nav items -->
+             <li class="nav-item">
+             <div class="dropdown">
+              <a
+                class="btn text-white dropdown-toggle dropbtn"style=" font-family: Allura, cursive; font-size: 25PX; " 
+                type="a"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Category</a
+              >
+              <ul class="menu dropdown-content " style=" font-family: Courgette, cursive; font-size: 15px;">
+                <li class="dropdown">                
+                  <div class="column">
+                    <h5>Makeup</h5>
+                    <a href="./maybelline.html">Lipstick</a><br>
+                    <a href="./maybelline.html">Foundation</a><br>
+                    <a href="./maybelline.html">Compact</a><br>
+                    <a href="./maybelline.html">Blush</a><br>
+                    <a href="./maybelline.html">Eyeshadow</a><hr>
+                </div>
+                 <div class="column">
+                    <h5>Skin Care</h5>
+                    <a href="./mamaeartproducts.html">Face Wash</a><br>
+                    <a href="./dot&key.html">Moisturizer</a><br>
+                    <a href="./dermcoproducts.html">Serum</a><br>
+                    <a href="./cetaphilproducts.html">Sunscreen</a><br>
+                    <a href="./dermcoproducts.html">Toner</a><hr>
+                </div>
+                  <!-- <div class="column">
+                    <h5>Hair Care</h5>
+                    <a href="#">Shampoo</a><br>
+                    <a href="#">Conditioner</a><br>
+                    <a href="#">Hair Oil</a><br>
+                    <a href="#">Hair Mask</a>
+                </div> -->
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+          </li>
+          <li class="nav-item"><a class="nav-link text-white" href="./new brand.html" id="brands">Brands</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./skincare.html">Skincare</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./signup.html">Sign up </a></li>
+          <li class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <!-- <button class="btn btn-primary"  type="button"><a src="./login.html" href="./login.htm"></a> Login</button> -->
+             <a class="btn btn-primary" href="./login.html">Login</a>
+          </li>
+        </ul>
+        </div>
+     </div>
+
+      </nav>
+    </div>
+<div class="">
+  <nav class="navbar bg-white"  style=" font-family: Allura, cursive; font-size: 25px; ">
+  <div class="container-fluid">
+    <!-- <div class="d-flex w-25" role="search">
+      <input  type="search" placeholder="Whats New?" aria-label="Search"/>
+      <a class="btn btn-outline-success" src="./search.html" type="submit">Search</a> -->
+    </div>
+    <div class="div"><!-- history -->
+<button class="btn btn-primary" onclick="history.back()">⬅</button></div>
+    <div class="search-container">
+    <input type="text"  style=" font-family: Courgette, cursive; font-size: 15px; border-radius: 8px; border-color: #6e025c; width: 100%; border-style: solid !important ; border-image: none !important; border-width: 3px; padding: 5px;" id="search" placeholder="Whats New...?" onfocus="showDropdown()" onkeyup="filterList()">
+    <ul class="dropdown"  style=" font-family: Courgette, cursive; font-size: 15px;" id="dropdown">
+    <!-- <div class="search-container">
+    <input type="text" id="search" placeholder="Search brands...">
+
+    <ul id="dropdown"></ul>
+</div> -->
+    </ul>
+</div>
+</ul>
+<ul class="nav justify-content-end">
+ <li class="nav-item">
+    <div>
+        <button class="btn  cart-toggle " id="openCart" aria-label="Open cart" style="font-size: 25px; padding-right: 25px;" title="Open cart">
+            🛒 <span style="font-weight:600">Cart</span>
+          <!-- <img class="w-25 a1" src="./icons8-heart-96.png"  alt=""> -->
+          <span id="cartCount" class="cart-count" aria-live="polite" hidden>0</span>
+        </button>
+      </div>
+    <!-- <a class="" href="#"><img class="w-25 a1" src="./icons8-heart-96.png"  alt=""></a> -->
+  </li>
+    <!-- <a class="nav-link" href="#"><img  class="w-25 a2" src="./icons8-shopping-bag-100.png" alt=""></a> -->
+           <div>
+              <li class="nav-item">
+        <a class="btn cart-toggle" id="openCart" aria-label="Open cart" title="Open cart">
+          <span id="cartCount" class="cart-count" aria-live="polite" hidden>0</span>
+        </a>
+          </li>
+      </div>
+</ul>
+  </div>
+</nav>
+</div>
+<div class="bg-white">
+  <div id="carouselExampleAutoplaying" class="carousel slide container p-2" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href=""><img src="./faces canada.webp" class="d-block w-100" alt="..."></a>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img src="./lakme-lip.webp" class="d-block w-100" alt="..."></a>
+    </div>
+    <div class="carousel-item ">
+      <a href=""><img src="./insight.webp" class="d-block w-100 " alt="..."></a>
+    </div>
+    <div class="carousel-item ">
+      <a href=""><img src="./may.webp" class="d-block w-100 " alt="..."></a>
+    </div>
+    <div class="carousel-item ">
+      <a href=""><img src="./fit-me.webp" class="d-block w-100 f1" alt="..."></a>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+<div class=" row justify-content-center aa container-fluid">
+  <div class="col-6 "> <a href="./maybelline.html"><img class="w-100" src="./blush.jpg" alt=""></a></div>
+  <div class="col-6">
+    <div class="row ">
+      <div class="col-12 "><a href="./maybelline.html"><img class="w-100" src="./last img.jpg" alt=""></a>
+        <div class="row ">
+          <div class="col-6 "><a href="./maybelline.html"><img class="w-100 pt-2" src=  "./m-lipst.jpg"alt="..."></a></div> 
+           <div class="col-6"><a href="./maybelline.html"><img class="w-100 pt-2" src="./short pg.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="bg-body-tertiary p-3 d11">
+  <h1>Extra 20% <span style=" font-family: Libertinus Keyboard, system-ui;"> OFFER </span></h1>
+  <h4> FOR SMART DEALS💄</h4>
+</div><br>
+  <!-- <div class="row" id="row1"></div> -->
+   <div class="container-fluid" id="cardhover">
+     <main>
+       <div data-bs-spy="scroll" data-bs-target="#down-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0"></div>
+       <section class="products-grid" style=" font-family: Courgette, cursive; font-size: 15px;" id="productsGrid">
+        <!-- Product card template (repeat) -->
+        <!-- 1 -->
+        <div class="card " id="down-1" data-id="p1" aria-labelledby="title-p1">
+          <div class="media" aria-hidden="true">
+            <img src="./lakme sunscreen.jpg" alt="Sample product 1">
+          </div>
+          <h2 id="title-p1" class="product-title">Sunscreen</h2>
+          <p class="product-desc">Lakeme 9to5 Sun Expert priming SPF PA++++.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹349</div>
+              <div class="muted">150 ml</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p1" aria-label="Add Herbal Soap to cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card" id="down-2" data-id="p2" aria-labelledby="title-p2">
+          <div class="media" aria-hidden="true">
+            <img src="./lips.jpg" alt="Sample product 2">
+          </div>
+          <h2 id="title-p2" class="product-title">Matte Lipstick</h2>
+          <p class="product-desc">Lakeme matte lipstick shades.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹449</div>
+              <div class="muted">50 g</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p2" aria-label="Add Moisturizer to cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card" data-id="p3" role="article" aria-labelledby="title-p3">
+          <div class="media" aria-hidden="true">
+            <img src="./lakme foundation 2.jpg" alt="Sample product 3">
+          </div>
+          <h2 id="title-p3" class="product-title">Foundation</h2>
+          <p class="product-desc">Lakeme 9to5 Primer-matte foundation.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹199</div>
+              <div class="muted">20 Shades</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p3" aria-label="Add Tea pack to cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lakme eyeshadow.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Eyeshadow</h2>
+          <p class="product-desc">Lakeme Absolute Infinity eyeshadow palette.</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹599</div>
+              <div class="muted">15+shades</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p4" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+         <!-- 5 -->
+
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lake me compact.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Compact</h2>
+          <p class="product-desc">"Lakeme 9to5 matte Compact</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹399</div>
+              <div class="muted">30 g</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p5" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+         <!-- 6 -->
+
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./kajal.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Kajal</h2>
+          <p class="product-desc"> Lakeme eyeconic insta cool Kajal</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹199</div>
+              <div class="muted">15 g</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p6" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+         <!-- 7-->
+
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lk-1.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Moisturiser</h2>
+          <p class="product-desc">Daily Hydrating body mask moisturiser</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹399</div>
+              <div class="muted">30 g</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p7" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+         <!-- 8 -->
+
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lk-con.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Lakeme Absolute</h2>
+          <p class="product-desc">Absolute everyday compact powder</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹349</div>
+              <div class="muted">50 g</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p8" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+         <!-- 9 -->
+
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lk-3.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Lipstick</h2>
+          <p class="product-desc">Matte finish lipstick for everyday</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹499</div>
+              <div class="muted">50 g</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p9" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+         <!-- 10 -->
+
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lk-cc.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Lakme 9t05 CC</h2>
+          <p class="product-desc">Complexion care cream SPF 30 PA++</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹149</div>
+              <div class="muted">30 ml</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p10" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+        <!-- 11 -->
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lakme1.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Lakme 9t05 </h2>
+          <p class="product-desc">HYA Matte Foundation + Hyaluronic acid</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹249</div>
+              <div class="muted">30 ml</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p11" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+        <!-- 12 -->
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lakme3.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Lakme </h2>
+          <p class="product-desc"> Lakme Everyday EyeConic Eyeliner</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹199</div>
+              <div class="muted">30 ml</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p12" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+        <!-- 13 -->
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lakme4.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Serum</h2>
+          <p class="product-desc">Perfect Radiance Brightening Serum</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹349</div>
+              <div class="muted">30 ml</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p13" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+        <!-- 14 -->
+        <div class="card" data-id="p4" role="article" aria-labelledby="title-p4">
+          <div class="media" aria-hidden="true">
+            <img src="./lame2.jpg" alt="Sample product 4">
+          </div>
+          <h2 id="title-p4" class="product-title">Absolute Foundation</h2>
+          <p class="product-desc">Lakme absolute illumanating foundation</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹249</div>
+              <div class="muted">30 ml</div>
+            </div>
+            <div>
+              <button class="btn btn-primary add-to-cart" data-id="p14" aria-label="Add Serum to cart">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- add more cards as needed... -->
+      </section>
+    </main>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div id="cartDrawer" class="cart-drawer" style=" font-family: Courgette, cursive; font-size: 15px;" aria-hidden="true" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h3 style="margin:0;">Cart Items💕</h3>
+      <div>
+        <button class="btn btn-outline" id="closeCart" aria-label="Close cart">Close</button>
+      </div>
+    </div>
+
+    <div class="cart-items" id="cartItems" aria-live="polite">
+      <p class="muted">No items yet — add something from the list.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div>
+        <div class="muted" id="cartSubtotalLabel">Subtotal</div>
+        <div style="font-weight:700;" id="cartSubtotal">₹0</div>
+      </div>
+      <div>
+        <button class="btn btn-primary" id="checkoutBtn" disabled>Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--makeup -->
+   <!-- 1 -->
+  <div class=" container-fluid">
+    <div class="row container-fluid">
+      <h2 class="mb-3 mt-3 m1 " style="text-align: center;color: rgb(255, 251, 251);">FLAT 50% OFFERS FOR ALL DEALS</h2>
+      <div class="col-md-6 p-3 ">
+        <a href="./maybelline.html"><img class="ho1" src="./MAY.jpg" width="100%" height="550px"></a>
+      </div>
+      <div class="col-md-6 p-3 ">
+       <a href="./maybelline.html"><img class="ho1" src="./MAY-2.jpg" width="100%" height="550px"></a>
+   </div>
+  </div>
+  <div class="text-center m2">
+      <h1>Up To 50% Off</h1>
+      <h2>10% Off on 599</h2>
+    </div>
+    <!-- 2 -->
+      <div class="row container-fluid">
+        <div class="col-md-6 p-3">
+          <img class="ho1" src="./MARS.jpg" width="100%" height="550px">
+        </div>
+        <div class="col-md-6 p-3 ">
+          <img class="ho1" src="./SUGAR.jpg" width="100%" height="550px">
+        </div>
+     </div>
+       <div class="text-center m2 container-fluid">
+      <h1>Up To 50% Off</h1>
+      <h2>10% Off on 499</h2>
+    </div>
+<!-- 3 -->
+      <div class="row container-fluid " id="">
+        <div class="col-md-6 p-3" id="down-example">
+         <a href="#down-1"><img  class="ho1" src="./FOUNDATION.jpg" width="100%" height="550px"></a>
+        </div>
+        <div class="col-md-6 p-3">
+          <a href="#down-2"><img class="ho1" src="./COS.jpg" width="100%" height= "550px"></a>
+        </div>
+      </div> 
+</div>
+<!-- Footer -->
+<footer class="footer bg-dark text-light pt-5 pb-4 " id="footer" style=" font-family: Courgette, cursive; font-size: 20px;">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- About -->
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">About Us</h5>
+        <p class="small">
+          We provide high-quality beauty & <br> skincare products at the best price. <br>
+          Your trusted cosmetic store.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-12 col-md-4 ">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled small">
+          <li><a href="./index.html" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="./skincare.html" class="text-light text-decoration-none">Skincare</a></li>
+          <li><a href="./new brand.html" class="text-light text-decoration-none">Brands</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-3">Contact</h5>
+        <p class="small mb-1">📍 Chennai, Tamil Nadu</p>
+        <p class="small mb-1">📞 +91 98765 43210</p>
+        <p class="small mb-3">📧 zyra@yourstore.com</p>
+
+        <div class="d-flex gap-3 fs-4">
+          <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary mt-4 mb-3">
+
+    <div class="text-center small"> 
+      © 2025 Your Store. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+
+
+<style>
+  /* Default (desktop) – image fills width normally */
+.ho1 {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+
+/* Mobile View – prevent stretching */
+@media (max-width: 576px) {
+  .ho1 {
+    height: 300px;     /* Set a safe mobile height */
+    object-fit: cover; /* Prevent stretching (crops instead of stretch) */
+    width: 100%;
+  }
+}
+
+  .footer a:hover {
+  color: #ff7eb3 !important;
+}
+.footer hr {
+  opacity: 0.2;
+}
+.footer{
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+}
+
+
+  .m1{
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+    padding: 40px;
+    color: antiquewhite;
+    font-family: Courgette, cursive; font-size: 25px;
+  }
+  .m2{
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+    padding: 30px;
+    color: antiquewhite;
+    font-family: Courgette, cursive; font-size: 15px;
+
+  }
+  .ho1:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+
+  }
+  nav
+  .a1{
+      width: 20px !important;
+    
+  }     
+  .a2{
+    width: 30px !important;
+    margin-top: -20px !important;
+    margin-left: 20px;
+  }
+  .b1 {
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+  }
+  .h1{
+    height: 100vh;
+    width: 100%;
+  }
+  .f1{
+    border-radius: 8px;
+  }
+  .h2{
+    width: 635px;
+    height: 400px;
+  }
+  .c1{
+    width:100px !important ;
+    height: 100px;
+  }
+  .aa1{
+    background-color: rgb(245, 229, 245);
+  }
+  .ca1{
+    width: 200px ;
+    height: 100px;
+  }
+  .ca2{
+    width: 200px;
+    height: 50px !important;
+
+  }
+  .ca3{
+    width: 200px;
+    height: 100px;
+
+  }
+  .ca4{
+    width: 200px !important;
+    height: 100px !important;
+
+  }
+  .ca5{
+    width: 200px !important;
+    height: 50px !important;
+
+  }
+  .ca6{
+    width: 200px !important;
+    height: 100px !important;
+
+  }
+  .d11{
+   background: #6e025c;
+background: linear-gradient(90deg, rgba(110, 2, 92, 1) 0%, rgba(28, 12, 12, 1) 100%, rgba(74, 51, 51, 1) 90%);
+color: antiquewhite;
+  }
+  /* dropdown menu */
+    .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu li a {
+    text-decoration: none !important;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    text-decoration: none !important;
+}
+
+/* Mega dropdown box */
+.dropdown-content {
+
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: white;
+    width: 300px;
+    padding: 20px !important;
+    box-shadow: 0px 2px 15px rgba(0,0,0,0.2);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    z-index: 999;
+}
+
+/* .dropdown-content .column a {
+    display: block;
+    padding: 5px 0;
+    color: #444;
+    font-size: 16px;
+} */
+
+.column h5 {
+    margin-bottom: 10px;
+    color: #d81b60;
+}
+
+/* Responsive */
+@media(max-width: 600px){
+    .dropdown-content {
+        width: 100%;
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+}
+
+
+/* Prevent column from expanding */
+    .search-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#dropdown {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#dropdown li:hover {
+    background: #f1f1f1;
+}
+
+
+:root{
+    --gap: 1rem;
+    --card-radius: 12px;
+    --card-bg: #fff;
+    --accent: #0b74ff;
+    --muted: #6b7280;
+    --page-bg: #f6f7fb;
+    --max-width: 1200px;
+  }
+
+  /* Page layout */
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--page-bg);
+    color:#111827;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .container{
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+    margin-bottom:1rem;
+  }
+  header h1{ font-size:1.25rem; margin:0; }
+  header p{ margin:0; color:var(--muted); font-size:0.95rem; }
+
+  /* Grid for products (responsive) */
+  .products-grid{
+    display:grid;
+    gap: var(--gap);
+    /* each card at least 220px wide, grow to fill space; auto-fit creates as many columns as fit */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items:start;
+  }
+
+  /* Product card */
+  .card{
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+    min-height: 220px;
+  }
+
+  .media{
+    display:block;
+    height:140px;
+    border-radius:10px;
+    overflow:hidden;
+    background:linear-gradient(180deg,#eee,#ddd);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .media img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  .product-title{ font-weight:600; font-size:1rem; margin:0; }
+  .product-desc{ color:var(--muted); font-size:0.90rem; margin:0; }
+  .price-row{ display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-top:auto; }
+  .price{ font-weight:700; font-size:1.02rem; color:#0b1220; }
+  .muted{ color:var(--muted); font-size:0.9rem; }
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    border:0;
+    padding:0.55rem 0.8rem;
+    font-size:0.95rem;
+    border-radius:10px;
+    cursor:pointer;
+  }          
+  .btn-primary{
+    background:var(--accent);
+    color:white;
+    background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
+    box-shadow: 0 6px 14px rgba(11,116,255,0.12);
+     margin: 10px;
+            padding: 10px 30px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 8px #eee;
+            border-radius: 10px;
+            display: block;
+  }
+  .btn-outline{
+    background:transparent;
+    border:1px solid #e6e6e6;
+    color: #111827;
+  }
+  .btn-primary:hover{
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+  }
+
+  /* Cart icon with count */
+  .cart-toggle{
+    position:relative;
+    right: -20px;
+    display:inline-flex;
+    gap:0.5rem;
+    align-items:center;
+  }
+  .cart-count{
+    position:absolute;
+    top:1px;
+    right:-1px;
+    background:#ff3b30;
+    color:white;
+    border-radius:999px;
+    padding:0 6px;
+    font-size:0.75rem;
+    line-height:1.6;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+
+  /* Cart drawer */
+  .cart-drawer{
+    position:fixed;
+    right:0;
+    top:0;
+    height:100vh;
+    width:500px;
+    max-width:calc(100% - 32px);
+    background:white;
+    transform:translateX(110%);
+    transition:transform .28s cubic-bezier(.22,.9,.18,1);
+    box-shadow:-20px 30px 80px rgba(13,20,30,0.12);
+    z-index:60;
+    display:flex;
+    flex-direction:column;
+    padding:1rem;
+    gap:1rem;
+  }
+  .cart-drawer.open{ transform:translateX(0); }
+  .cart-header{ display:flex; justify-content:space-between; align-items:center; gap:0.5rem; }
+  .cart-items{ overflow:auto; flex:1; display:flex; flex-direction:column; gap:0.75rem; padding-right:4px; }
+  .cart-item{ display:flex; gap:0.75rem; align-items:center; padding:0.35rem; border-radius:8px; background:#fbfbfd; }
+  .cart-item img{ width:200px; height:200px; object-fit:cover; border-radius:8px; }
+  .cart-item .meta{ flex:1; }
+  .cart-footer{ display:flex; justify-content:space-between; align-items:center; gap:0.5rem; }
+
+  /* small screens adjustments */
+  @media (max-width:520px){
+    header{ flex-direction:column; align-items:flex-start; gap:0.5rem; }
+    .cart-drawer{ width:100%; max-width:100%; }
+    .media{ height:120px; }
+  }
+  .cart-item img:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+ 
+</style>
+  <div class="row" id="row2">
+
+</div>
+  <!-- <script>
+    var a=[{img:"./lakme sunscreen.jpg",name:"Lakeme 9to5 Sun Expert priming SPF PA++++",price:349,a:"Add to cart"},
+{img:"./lips.jpg",name:"Lakeme matte lipstick shades",price:268,a:"Add to cart"},
+{img:"./lakme foundation 2.jpg",name:"Lakeme 9to5 Primer-matte foundation",price:249,a:"Add to cart"},
+{img:"./lakme eyeshadow.jpg",name:"Lakeme Absolute Infinity eyeshadow palette",price:497,a:"Add to cart"},
+{img:"./lake me compact.jpg",name:"Lakeme 9to5 matte Compact ",price:299,a:"Add to cart"},
+{img:"./kajal.jpg",name:" Lakeme eyeconic insta cool Kajal",price:199,a:"Add to cart"}]
+
+
+var row2=document.getElementById("row2")
+a.map((e)=>{
+  row2.innerHTML +=
+  `<div class="col-2 p-2">
+   <div class="text-center border p-2">
+    <img src="${e.img}" alt="" style="width:100%">
+      <p>${e.name}</p>
+      <h6>${e.price}</h6>
+      <a class="btn btn-outline-primary" onclick="cart1(${e.img},${e.name},${e.price})">add to cart</a>
+  </div>`
+
+})
+
+function cart1(img,name,price){
+
+}
+
+  </script>
+ -->
+
+<script>
+  // history.go(-1);
+
+  // Simple product data (for demo)
+  const PRODUCTS = {
+    p1: {id:'p1', title:'Sunscreen', price:349, img:'./lakme sunscreen.jpg'},
+    p2: {id:'p2', title:'Matte Lipstick', price:449, img:'./lips.jpg'},
+    p3: {id:'p3', title:'Foundation', price:199, img:'./lakme foundation 2.jpg'},
+    p4: {id:'p4', title:'Eyeshadow', price:599, img:'./lakme eyeshadow.jpg'},
+    p5: {id:'p5', title:'Compact', price:399, img:'./lake me compact.jpg'},
+    p6: {id:'p6', title:'Kajal', price:199, img:'./kajal.jpg'},
+    p7: {id:'p7', title:'Moisturiser', price:399, img:'./lk-1.jpg'},
+    p8: {id:'p8', title:'Lakeme absolute', price:349, img:'./lk-con.jpg'},
+    p9: {id:'p9', title:'Lipstick', price:449, img:'./lk-3.jpg'},
+    p10: {id:'p10', title:'Lakme 9 to 5 CC', price:149, img:'./lk-cc.jpg'},
+    p11: {id:'p11', title:'Lakme 9 to 5', price:249, img:'./lakme1.jpg'},
+    p12: {id:'p12', title:'Lakme', price:199, img:'./lakme3.jpg'},
+    p13: {id:'p13', title:'Serum', price:349, img:'./lakme4.jpg'},
+    p14: {id:'p14', title:'Absolute Foundation', price:249, img:'./lame2.jpg'},
+  };
+
+  const cart = {}; // { productId: qty }
+
+  const cartCountEl = document.getElementById('cartCount');
+  const cartItemsEl = document.getElementById('cartItems');
+  const cartSubtotalEl = document.getElementById('cartSubtotal');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const cartDrawer = document.getElementById('cartDrawer');
+
+  function updateCartUI(){
+    // update count
+    const totalQty = Object.values(cart).reduce((s,q) => s+q, 0);
+    if(totalQty>0){
+      cartCountEl.hidden = false;
+      cartCountEl.textContent = totalQty;
+    } else {
+      cartCountEl.hidden = true;
+    }
+
+    // update items listing
+    cartItemsEl.innerHTML = '';
+    if(totalQty === 0){
+      const p = document.createElement('p');
+      p.className = 'muted';
+      p.textContent = 'No items yet — add something from the list.';
+      cartItemsEl.appendChild(p);
+      cartSubtotalEl.textContent = '₹0';
+      checkoutBtn.disabled = true;
+      return;
+    }
+
+    // render each cart item
+    let subtotal = 0;
+    for(const [id, qty] of Object.entries(cart)){
+      const prod = PRODUCTS[id];
+      const lineTotal = prod.price * qty;
+      subtotal += lineTotal;
+
+      const item = document.createElement('div');
+      item.className = 'cart-item';
+
+      item.innerHTML = `
+        <img src="${prod.img}" alt="${prod.title}" />
+        <div class="meta">
+          <div style="font-weight:600">${prod.title}</div>
+          <div class="muted">₹${prod.price} × ${qty} = ₹${lineTotal}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+          <div>
+            <button class="btn btn-outline small dec" data-id="${id}" aria-label="Decrease quantity">−</button>
+            <button class="btn btn-outline small inc" data-id="${id}" aria-label="Increase quantity">＋</button>
+          </div>
+          <button class="btn" style="font-size:0.8rem;color:#9b9b9b;border:0;background:transparent;" data-id="${id}" aria-label="Remove item">Remove</button>
+        </div>
+      `;
+      cartItemsEl.appendChild(item);
+    }
+
+    cartSubtotalEl.textContent = '₹' + subtotal;
+    checkoutBtn.disabled = false;
+
+    // attach handlers for inc/dec/remove
+    cartItemsEl.querySelectorAll('.inc').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        const id = btn.dataset.id;
+        cart[id] = (cart[id]||0) + 1;
+        updateCartUI();
+      });
+    });
+    cartItemsEl.querySelectorAll('.dec').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        const id = btn.dataset.id;
+        cart[id] = (cart[id]||0) - 1;
+        if(cart[id] <= 0) delete cart[id];
+        updateCartUI();
+      });
+    });
+    cartItemsEl.querySelectorAll('[data-id][aria-label="Remove item"]').forEach(btn=>{
+      btn.addEventListener('click', e=>{
+        const id = btn.dataset.id;
+        delete cart[id];
+        updateCartUI();
+      });
+    });
+  }
+
+  // Add to cart listeners
+  document.querySelectorAll('.add-to-cart').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const id = btn.dataset.id;
+      cart[id] = (cart[id]||0) + 1;
+      updateCartUI();
+      // open cart automatically (nice UX)
+      openCart();
+      // small a11y announcement
+      btn.setAttribute('aria-pressed','true');
+      setTimeout(()=>btn.removeAttribute('aria-pressed'), 250);
+    });
+  });
+
+  // open/close cart
+  function openCart(){
+    cartDrawer.classList.add('open');
+    cartDrawer.setAttribute('aria-hidden','false');
+  }
+  function closeCart(){
+    cartDrawer.classList.remove('open');
+    cartDrawer.setAttribute('aria-hidden','true');
+  }
+  document.getElementById('openCart').addEventListener('click', openCart);
+  document.getElementById('closeCart').addEventListener('click', closeCart);
+
+  // checkout demo
+  checkoutBtn.addEventListener('click', ()=>{
+    // demo behaviour: just clear cart and close
+    alert('Checkout demo — clearing cart.');
+    for(const k of Object.keys(cart)) delete cart[k];
+    updateCartUI();
+    closeCart();
+  });
+
+  // initial render
+  updateCartUI();
+
+  // keyboard accessibility: close drawer on Esc
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && cartDrawer.classList.contains('open')){
+      closeCart();
+    }
+  });
+
+// dropdown
+  
+    let brands = [
+    "Maybelline",
+    "Mamaearth",
+    "Dot&Key",
+    "Dermdoc",
+    "Cetaphil sunscreen",
+    "Cetaphil moisturizer",
+    "Cetaphil eyegel",
+    "Cetaphil eyecream",
+    "Cetaphil cleanser",
+    "Cetaphil nightcream",
+    "Maybelline Eyeliner",
+    "Maybelline Eyeshadow palet",
+    "Maybelline Foundation",
+    "Maybelline colour corrector",
+    "Maybelline newyork maskara",
+    "Maybelline newyork kajal",
+    "Maybelline newyork lipstick",
+    // "Lakme Eyeliner",
+    // "Lakme Eyeshadow palet",
+    // "Lakme Foundation",
+    // "Lakme colour corrector",
+    // "Lakme newyork maskara",
+    // "Lakme newyork kajal",
+    // "Lakme newyork lipstick",
+    // "Faces Canada Eyeliner",
+    // "Faces Canada Eyeshadow palet",
+    // "Faces Canada Foundation",
+    // "Faces Canada colour corrector",
+    // "Faces Canada newyork maskara",
+    // "Faces Canada newyork kajal",
+    // "Faces Canada newyork lipstick",
+];
+
+const search = document.getElementById("search");
+const dropdown = document.getElementById("dropdown");
+
+search.addEventListener("input", () => {
+    let value = search.value.toLowerCase();
+
+    // FILTER + SORT
+    let filtered = brands
+        .filter(b => b.toLowerCase().includes(value))
+        .sort(); // alphabetical sort
+
+    dropdown.innerHTML = "";
+
+    if (filtered.length > 0 && value !== "") {
+        dropdown.style.display = "block";
+
+        filtered.forEach(brand => {
+            let li = document.createElement("li");
+            li.textContent = brand;
+            dropdown.appendChild(li);
+
+            li.onclick = () => {
+                search.value = brand;
+                dropdown.style.display = "none";
+            };
+        });
+
+    } else {
+        dropdown.style.display = "none";
+    }
+});
+
+// CLOSE DROPDOWN IF CLICK OUTSIDE
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-container")) {
+        dropdown.style.display = "none";
+    }
+});
+
+//    dropdown menu
+const dropbtn = document.querySelector(".dropbtn");
+const dropdownContent = document.querySelector(".dropdown-content");
+
+// CLICK to open
+dropbtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    dropdownContent.style.display =
+        dropdownContent.style.display === "grid" ? "none" : "grid";
+});
+
+// CLICK outside → close
+document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+        dropdownContent.style.display = "none";
+    }
+});
+
+
+// ===================== SEARCH PAGE LINKS =====================
+const searchLinks = {
+    "ultra matte": "./dermcoproducts.html",
+    "Dermdoc": "./dermcoproducts.html",
+    "niacinamide": "./dermcoproducts.html",
+    "hyaluronic": "./dermcoproducts.html",
+    "sunscreen": "./dermcoproducts.html",
+    "aha": "./dermcoproducts.html",
+    "bha": "./dermcoproducts.html",
+    "facewash": "./dermcoproducts.html",
+
+    // Other brands (if you want cross-search):
+    "hydrating": "./dot&key.html",
+    "facewash": "./dot&key.html",
+    "dot&key": "./dot&key.html",
+    "cetaphil": "./cetaphilproducts.html",
+    "maybelline": "./maybelline.html",
+    "mamaearth": "./mamaeartproducts.html",
+    // "lakme": "./lakme.html"
+};
+// ===================== SEARCH DROPDOWN + CLICK OPEN PAGE =====================
+
+let brands1 = [
+    "Ultra matte sheer sunscreen gel",
+    "Dermdoc brightning sunscreen SPF 50 PA+++",
+    "Dermcoc 10% niacinamide face serum",
+    "Dermdoc 1% Hyalironic sunscreen aqua gel",
+    "Dermdoc 3% AHA-BHA foaming face wash",
+    "Dermdoc 1% collagen daily serum cream",
+    "Dermdoc gentle foaming facewash",
+    "Dermdoc 2% kojic acid brightens & repairs skin",
+    "Dermdoc deep moisturizing creme body lotion",
+    "Dermdoc 1% niacinamide gentle foaming wash",
+    "Hypochlorous anti-acne hydrating spray",
+];
+
+const search1 = document.getElementById("search");
+const dropdown1 = document.getElementById("dropdown");
+
+search.addEventListener("input", () => {
+    let value = search.value.toLowerCase().trim();
+
+    let filtered = brands
+        .filter(item => item.toLowerCase().includes(value))
+        .sort();
+
+    dropdown.innerHTML = "";
+
+    if (filtered.length > 0 && value !== "") {
+        dropdown.style.display = "block";
+
+        filtered.forEach(item => {
+            let li = document.createElement("li");
+            li.textContent = item;
+            dropdown.appendChild(li);
+
+            li.onclick = () => {
+                search.value = item;
+                dropdown.style.display = "none";
+
+                // Check for page redirect
+                let keyword = item.toLowerCase();
+
+                for (let key in searchLinks) {
+                    if (keyword.includes(key)) {
+                        window.location.href = searchLinks[key];
+                        return;
+                    }
+                }
+            };
+        });
+
+    } else {
+        dropdown.style.display = "none";
+    }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-container")) {
+        dropdown.style.display = "none";
+    }
+});
+
+
+
+  </script>
+    <script src="./bootstrap.bundle.min.js"></script>
+  </body>
+</html>

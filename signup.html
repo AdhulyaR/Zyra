@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="signup.css" />
+    <!-- <link rel="stylesheet" href="./index.html"> -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create Account</h1>
+      <form id="signupForm">
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Create a password"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Re-enter password"
+            required
+          />
+        </div>
+
+        <button type="submit">Sign Up</button>
+        <p class="message">
+          Already have an account? <a href="./login.html">Login</a>
+         <!-- <a href="./index.html">❤️</a> -->
+        </p>
+      </form>
+    </div>
+
+    <script src="signup.js"></script>
+  </body>
+</html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient( circle farthest-corner at 50.3% 47.3%,  rgba(113,42,92,1) 0.1%, rgb(59, 37, 68) 90% );
+  }
+
+  .container {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 370px;
+    text-align: center;
+  }
+
+  .container h1 {
+    margin-bottom: 25px;
+    color: gray;
+  }
+
+  .input-group {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+
+  .input-group  {
+    border-color: #ec4899;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ec4899;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: backgroun 0.3s;
+  }
+
+  button:hover {
+    background-color: #db2777;
+  }
+
+  .message {
+    margin-top: 15px;
+    color: #666;
+  }
+
+  .message a {
+    color: #ec4899;
+    text-decoration: none;
+  }
+
+  .message a:hover {
+    text-decoration: underline;
+  }
+</style>
+<script>
+  document
+    .getElementById("signupForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirmPassword = document
+        .getElementById("confirmPassword")
+        .value.trim();
+
+      if (
+        name === "" ||
+        email === "" ||
+        password === "" ||
+        confirmPassword === ""
+      ) {
+        alert("Please fill out all fields!");
+      }
+       else if (!validateEmail(email)) {
+        alert("Please enter a valid email address!");
+      }
+       else if (password.length < 6) {
+        alert("Password must be at least 6 characters!");
+      }
+       else if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+      }
+       else {
+        alert("Account created successfully!");
+      }
+    });
+
+  function validateEmail(email) {
+    const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    return pattern.test(email);
+  }
+</script>

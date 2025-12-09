@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skincare</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./index.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Libertinus+Keyboard&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mt-2 bg-body-tertiary">
+    <div class="">
+      <nav
+        class="navbar bg-body-tertiar b1 p-2"
+        style="font-family: Allura, cursive; font-size: 25px"
+      >
+        <a class="navbar-brand" href="./index.html">
+          <img
+            src="./zyra_og-removebg-preview.png"
+            alt="ZYRA"
+            width="100px"
+            height="80"
+          />
+        </a>
+        <div class="navbar navbar-expand-sm">
+          <button
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapse">
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a
+                    class="btn text-white dropdown-toggle dropbtn"
+                    style="font-family: Allura, cursive; font-size: 25px"
+                    type="a"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >Category</a>
+                  <ul
+                    class="menu dropdown-content"
+                    style="font-family: Courgette, cursive; font-size: 15px"
+                  >
+                    <li class="dropdown">
+                      <div class="column">
+                        <h5>Skin Care</h5>
+                        <a href="#">Face Wash</a><br />
+                        <a href="#">Moisturizer</a><br />
+                        <a href="#">FaceSerum</a><br />
+                        <a href="#">Sunscreen</a><br />
+                        <a href="#">Hair Serum</a><br />
+                        <a href="#">FacewashGel</a><br />
+                        <a href="#">Cleanser</a><br />
+                        <a href="#">Eye Cream</a><br />
+                        <a href="#">Body Lotion</a><br />
+                        <a href="#">NightCream</a><br />
+                        <a href="#">Face Mask</a><br />
+                        <a href="#">Body wash</a>
+                        <hr />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item"></li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="./skincare.html"
+                  >Skincare</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="div">
+      <!-- history -->
+      <!-- <a href="./index.html" id="back" class="btn btn-primary" onclick="history.back()">⬅</a></div> -->
+
+      <!-- <a type="button" class="btn-close" aria-label="Close" href="./index.html"></a> -->
+      <div id="carouselExampleCaptions" class="carousel slide container">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="container">
+            <a href="./mamaeartproducts.html"
+              ><img src="./mamaearth.webp" class="d-block w-100" alt="..."
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <a class="btn btn-success" href="./mamaeartproducts.html"
+                >Shop Now>></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="carousel-inner">
+          <div class="container">
+            <a href="./dot&key.html"
+              ><img src="./dot-banner.webp" class="d-block w-100" alt="..."
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <a class="btn btn-danger" href="./dot&key.html">Shop Now>></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="container">
+            <a href="./cetaphilproducts.html">
+              <img src="./cetaphil.webp" class="d-block w-100" alt="..."
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <a class="btn btn-info" href="./cetaphilproducts.html"
+                >Shop Now>></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="carousel-inner">
+          <div class="container">
+            <a href="./dermcoproducts.html"
+              ><img src="./dremcp.webp" class="d-block w-100" alt="..."
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <a class="btn btn-primary" href="./dermcoproducts.html"
+                >Shop Now>></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <main>
+      <section
+        class="products-grid container"
+        style="font-family: Courgette, cursive; font-size: 15px"
+        id="productsGrid"
+      >
+        <div
+          class="card"
+          data-id="p4"
+          role="article"
+          aria-labelledby="title-p4"
+        >
+          <div class="media" aria-hidden="true">
+            <a href="./dot&key.html"
+              ><img src="./dkb-1.jpg" alt="Sample product 4"
+            /></a>
+          </div>
+          <h2 id="title-p4" class="product-title">Dot & Key</h2>
+          <p class="product-desc">Hydrating Gel</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹349</div>
+              <div class="muted">60 ml</div>
+            </div>
+            <div>
+              <a
+                href="./dot&key.html"
+                class="btn btn-primary add-to-cart"
+                data-id="p8"
+                aria-label="Add Serum to cart"
+                >Shop now>></a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="p4"
+          role="article"
+          aria-labelledby="title-p4"
+        >
+          <div class="media" aria-hidden="true">
+            <a href="./mamaeartproducts.html"
+              ><img src="./mm-9.jpg" alt="Sample product 4"
+            /></a>
+          </div>
+          <h2 id="title-p4" class="product-title">Mamaearth</h2>
+          <p class="product-desc">Ubtan Body Lotion</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹459</div>
+              <div class="muted">400 ml</div>
+            </div>
+            <div>
+              <a
+                href="./mamaeartproducts.html"
+                class="btn btn-primary add-to-cart"
+                data-id="p8"
+                aria-label="Add Serum to cart"
+                >Shop now>></a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="card"
+          data-id="p4"
+          role="article"
+          aria-labelledby="title-p4"
+        >
+          <div class="media" aria-hidden="true">
+            <a href="./cetaphilproducts.html"
+              ><img src="./c1-daily.jpg" alt="Sample product 4"
+            /></a>
+          </div>
+          <h2 id="title-p4" class="product-title">Cetaphil</h2>
+          <p class="product-desc">Daily Facial Cleanser</p>
+          <div class="price-row">
+            <div>
+              <div class="price">₹649</div>
+              <div class="muted">237 ml</div>
+            </div>
+            <div>
+              <a
+                href="./cetaphilproducts.html"
+                class="btn btn-primary add-to-cart"
+                data-id="p8"
+                aria-label="Add Serum to cart"
+                >Shop now>></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="footer bg-dark text-light pt-5 pb-4"
+      id="footer"
+      style="font-family: Courgette, cursive; font-size: 20px"
+    >
+      <div class="container">
+        <div class="row gy-4">
+          <!-- About -->
+          <div class="col-12 col-md-4">
+            <h5 class="fw-bold mb-3">About Us</h5>
+            <p class="small">
+              We provide high-quality beauty & <br />
+              skincare products at the best price. <br />
+              Your trusted cosmetic store.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-12 col-md-4">
+            <h5 class="fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled small">
+              <li>
+                <a href="./index.html" class="text-light text-decoration-none"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./skincare.html"
+                  class="text-light text-decoration-none"
+                  >Skincare</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./new brand.html"
+                  class="text-light text-decoration-none"
+                  >Brands</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-12 col-md-4">
+            <h5 class="fw-bold mb-3">Contact</h5>
+            <p class="small mb-1">📍 Chennai, Tamil Nadu</p>
+            <p class="small mb-1">📞 +91 98765 43210</p>
+            <p class="small mb-3">📧 zyra@yourstore.com</p>
+
+            <div class="d-flex gap-3 fs-4">
+              <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-secondary mt-4 mb-3" />
+
+        <div class="text-center small">
+          © 2025 Your Store. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      /* Default (desktop) – image fills width normally */
+      .ho1 {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      /* Mobile View – prevent stretching */
+      @media (max-width: 576px) {
+        .ho1 {
+          height: 300px; /* Set a safe mobile height */
+          object-fit: cover; /* Prevent stretching (crops instead of stretch) */
+          width: 100%;
+        }
+      }
+
+      .footer a:hover {
+        color: #ff7eb3 !important;
+      }
+      .footer hr {
+        opacity: 0.2;
+      }
+      .footer {
+        background-image: radial-gradient(
+          circle farthest-corner at 50.3% 47.3%,
+          rgba(113, 42, 92, 1) 0.1%,
+          rgba(40, 25, 46, 1) 90%
+        );
+      }
+
+      .b1 {
+        background-image: radial-gradient(
+          circle farthest-corner at 50.3% 47.3%,
+          rgba(113, 42, 92, 1) 0.1%,
+          rgba(40, 25, 46, 1) 90%
+        );
+      }
+      .menu {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      .menu li a {
+        text-decoration: none !important;
+        color: #333;
+        font-size: 18px;
+      }
+
+      /* Dropdown container */
+      .dropdown {
+        position: relative;
+        text-decoration: none !important;
+      }
+
+      /* Mega dropdown box */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background: white;
+        width: 300px;
+        padding: 20px !important;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        z-index: 999;
+      }
+
+      /* .dropdown-content .column a {
+    display: block;
+    padding: 5px 0;
+    color: #444;
+    font-size: 16px;
+} */
+
+      .column h5 {
+        margin-bottom: 10px;
+        color: #d81b60;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .dropdown-content {
+          width: 100%;
+          grid-template-columns: 1fr;
+          position: relative;
+        }
+
+        .menu {
+          flex-direction: column;
+        }
+      }
+      /* btn-primary */
+      #back {
+        background: var(--accent);
+        color: white;
+        background-image: linear-gradient(
+          to right,
+          #aa076b 0%,
+          #61045f 51%,
+          #aa076b 100%
+        );
+        box-shadow: 0 6px 14px rgba(11, 116, 255, 0.12);
+        margin: 10px;
+        padding: 10px 30px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 8px #eee;
+        border-radius: 10px;
+        display: block;
+      }
+      #back-outline {
+        background: transparent;
+        border: 1px solid #e6e6e6;
+        color: #111827;
+      }
+      #back:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+
+      :root {
+        --gap: 1rem;
+        --card-radius: 12px;
+        --card-bg: #fff;
+        --accent: #0b74ff;
+        --muted: #6b7280;
+        --page-bg: #f6f7fb;
+        --max-width: 1200px;
+      }
+
+      /* Page layout */
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: var(--page-bg);
+        color: #111827;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: var(--max-width);
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      header h1 {
+        font-size: 1.25rem;
+        margin: 0;
+      }
+      header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      /* Grid for products (responsive) */
+      .products-grid {
+        display: grid;
+        gap: var(--gap);
+        /* each card at least 220px wide, grow to fill space; auto-fit creates as many columns as fit */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        align-items: start;
+      }
+
+      /* Product card */
+      .card {
+        background: var(--card-bg);
+        border-radius: var(--card-radius);
+        padding: 1rem;
+        box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        min-height: 220px;
+      }
+
+      .media {
+        display: block;
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #eee, #ddd);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .product-title {
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0;
+      }
+      .product-desc {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: auto;
+      }
+      .price {
+        font-weight: 700;
+        font-size: 1.02rem;
+        color: #0b1220;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 0;
+        padding: 0.55rem 0.8rem;
+        font-size: 0.95rem;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+        box-shadow: 0 6px 14px rgba(11, 116, 255, 0.12);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid #e6e6e6;
+        color: #111827;
+      }
+
+      /* Cart icon with count */
+      .cart-toggle {
+        position: relative;
+        right: -30px;
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .cart-count {
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        background: #ff3b30;
+        color: white;
+        border-radius: 999px;
+        padding: 0 6px;
+        font-size: 0.75rem;
+        line-height: 1.6;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Cart drawer */
+      .cart-drawer {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 360px;
+        max-width: calc(100% - 32px);
+        background: white;
+        transform: translateX(110%);
+        transition: transform 0.28s cubic-bezier(0.22, 0.9, 0.18, 1);
+        box-shadow: -20px 30px 80px rgba(13, 20, 30, 0.12);
+        z-index: 60;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+      }
+      .cart-drawer.open {
+        transform: translateX(0);
+      }
+      .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .cart-items {
+        overflow: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding-right: 4px;
+      }
+      .cart-item {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        padding: 0.35rem;
+        border-radius: 8px;
+        background: #fbfbfd;
+      }
+      .cart-item img {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .cart-item .meta {
+        flex: 1;
+      }
+      .cart-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      /* small screens adjustments */
+      @media (max-width: 520px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+        .cart-drawer {
+          width: 100%;
+          max-width: 100%;
+        }
+        .media {
+          height: 120px;
+        }
+      }
+    </style>
+    <script>
+      //     // menu
+      const dropbtn = document.querySelector(".dropbtn");
+      const dropdownContent = document.querySelector(".dropdown-content");
+
+      // CLICK to open
+      dropbtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdownContent.style.display =
+          dropdownContent.style.display === "grid" ? "none" : "grid";
+      });
+
+      // CLICK outside → close
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".dropdown")) {
+          dropdownContent.style.display = "none";
+        }
+      });
+    </script>
+
+    <script src="./bootstrap.bundle.min.js"></script>
+  </body>
+</html>
